@@ -9,15 +9,15 @@ import random
 
 # Set values from CLI arguments or defaults
 # Players in the party
-players = int(sys.argv[1]) if len(sys.argv) == 6 else 5
+players = int(sys.argv[1]) if len(sys.argv) >= 2 else 5
 # Allow for repeat races
-repeat_race = False if len(sys.argv) == 6 and int(sys.argv[2]) == 0 else True
+repeat_race = False if len(sys.argv) >= 3 and int(sys.argv[2]) == 0 else True
 # Allow for repear classes
-repeat_class = True if len(sys.argv) == 6 and int(sys.argv[3]) == 1 else False
+repeat_class = True if len(sys.argv) >= 4 and int(sys.argv[3]) == 1 else False
 # Allow for customisable stats from Tasha's Cauldron of Everything
-custom_stats = False if len(sys.argv) == 6 and int(sys.argv[4]) == 0 else True
+custom_stats = False if len(sys.argv) >= 5 and int(sys.argv[4]) == 0 else True
 # Add RPGBOT's opinion on the combination
-RPGBOT_opinion = False if len(sys.argv) == 6 and int(
+RPGBOT_opinion = False if len(sys.argv) >= 6 and int(
     sys.argv[5]) == 0 else True
 
 CORE = 1  # Player's handbook, DMG, Volo's 1
